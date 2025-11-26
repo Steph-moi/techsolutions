@@ -1,0 +1,28 @@
+=== XSS EXERCICE ===
+Timestamp: 2025-11-26 14:49:28
+IP: ::1
+Cookies: PHPSESSID=lpl3dh4ppcunra8385mg8tmak1
+URL: http://localhost/phishing/facturephishing.html
+===================
+
+=== XSS EXERCICE ===
+Timestamp: 2025-11-26 14:49:33
+IP: ::1
+Cookies: PHPSESSID=lpl3dh4ppcunra8385mg8tmak1
+URL: http://localhost/phishing/facturephishing.html
+===================
+
+=== XSS EXERCICE ===
+Timestamp: 2025-11-26 14:50:08
+IP: ::1
+Cookies: PHPSESSID=lpl3dh4ppcunra8385mg8tmak1
+URL: http://localhost/phishing/facturephishing.html
+===================
+
+=== XSS EXERCICE ===
+Timestamp: 2025-11-26 14:50:13
+IP: ::1
+Cookies: PHPSESSID=lpl3dh4ppcunra8385mg8tmak1
+URL: http://localhost/phishing/facturephishing.html
+===================
+
