@@ -1,5 +1,8 @@
-<?php require_once 'config/database.php'; ?>
-<?php include 'includes/header.php'; ?>
+<?php 
+require_once 'config/database.php';
+require_once 'includes/auth.php';
+include 'includes/header.php';
+?>
 
 <section class="hero">
     <h1>Bienvenue chez TechSolutions</h1>

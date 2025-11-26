@@ -42,7 +42,10 @@ $articles = $pdo->query("SELECT a.*, u.prenom, u.nom FROM articles a
 <?php include '../includes/header.php'; ?>
 
 <section class="admin-articles">
-    <h1>Gestion des Actualités</h1>
+    <div class="admin-header">
+        <h1>Gestion des Actualités</h1>
+        <a href="index.php" class="btn-back">← Retour au tableau de bord</a>
+    </div>
     
     <div class="form-container">
         <h2><?= $editArticle ? 'Modifier' : 'Nouvel' ?> Article</h2>

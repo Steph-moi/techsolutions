@@ -18,7 +18,10 @@ $users = $pdo->query("SELECT * FROM users ORDER BY created_at DESC")->fetchAll()
 <?php include '../includes/header.php'; ?>
 
 <section class="admin-users">
-    <h1>Gestion des Utilisateurs</h1>
+    <div class="admin-header">
+        <h1>Gestion des Utilisateurs</h1>
+        <a href="index.php" class="btn-back">← Retour au tableau de bord</a>
+    </div>
     
     <table>
         <thead>

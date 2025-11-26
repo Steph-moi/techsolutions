@@ -48,7 +48,10 @@ $ordinateurs = $pdo->query("SELECT * FROM ordinateurs ORDER BY created_at DESC")
 <?php include '../includes/header.php'; ?>
 
 <section class="admin-ordinateurs">
-    <h1>Gestion des Ordinateurs</h1>
+    <div class="admin-header">
+        <h1>Gestion des Ordinateurs</h1>
+        <a href="index.php" class="btn-back">← Retour au tableau de bord</a>
+    </div>
     
     <div class="form-container">
         <h2><?= $editPC ? 'Modifier' : 'Nouvel' ?> Ordinateur</h2>

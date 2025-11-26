@@ -67,7 +67,7 @@ section {
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #5574ff 0%, #1607e6 100%);
     color: white;
 }
 
@@ -234,6 +234,23 @@ th {
     transform: translateY(-3px);
 }
 
+.service-card.admin-only {
+    border: 2px solid #e74c3c;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+}
+
+.service-card.admin-only h3 {
+    color: #c0392b;
+}
+
+.service-card.admin-only .service-link {
+    background: #e74c3c;
+}
+
+.service-card.admin-only .service-link:hover {
+    background: #c0392b;
+}
+
 .gdpr-actions {
     margin-top: 3rem;
     padding: 2rem;
@@ -254,6 +271,27 @@ footer a {
     text-decoration: none;
 }
 
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn-back {
+    padding: 0.5rem 1rem;
+    background: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-back:hover {
+    background: #7f8c8d;
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -261,6 +299,12 @@ footer a {
     }
     
     nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .admin-header {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
