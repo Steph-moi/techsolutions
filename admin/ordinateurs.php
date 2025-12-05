@@ -1,49 +1,49 @@
-<?php
-require_once '../includes/auth.php';
-requireAdmin();
+<?php // Ouverture du tag PHP
+require_once '../includes/auth.php'; // Inclusion du fichier d'authentification
+requireAdmin(); // Vérification des droits administrateur
 
-// Suppression
-if (isset($_GET['delete'])) {
-    $stmt = $pdo->prepare("DELETE FROM ordinateurs WHERE id = ?");
-    $stmt->execute([$_GET['delete']]);
-    header('Location: ordinateurs.php');
-    exit;
+// Suppression - Commentaire expliquant le bloc de suppression d'ordinateur
+if (isset($_GET['delete'])) { // Vérifie si un ID d'ordinateur à supprimer est passé en paramètre GET
+    $stmt = $pdo->prepare("DELETE FROM ordinateurs WHERE id = ?"); // Prépare la requête de suppression
+    $stmt->execute([$_GET['delete']]); // Exécute la suppression avec l'ID en paramètre
+    header('Location: ordinateurs.php'); // Redirection vers la page de gestion des ordinateurs
+    exit; // Arrêt de l'exécution du script
 }
 
-// Ajout/Modification
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nom = trim($_POST['nom']);
-    $prix = floatval($_POST['prix']);
-    $processeur = trim($_POST['processeur']);
-    $ram = trim($_POST['ram']);
-    $stockage = trim($_POST['stockage']);
-    $carte_graphique = trim($_POST['carte_graphique']);
-    $description = trim($_POST['description']);
-    $disponible = isset($_POST['disponible']) ? 1 : 0;
+// Ajout/Modification - Commentaire expliquant le traitement du formulaire
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Vérifie si le formulaire a été soumis en méthode POST
+    $nom = trim($_POST['nom']); // Récupère et nettoie le nom du produit saisi
+    $prix = floatval($_POST['prix']); // Récupère et convertit le prix en nombre décimal
+    $processeur = trim($_POST['processeur']); // Récupère et nettoie le processeur saisi
+    $ram = trim($_POST['ram']); // Récupère et nettoie la RAM saisie
+    $stockage = trim($_POST['stockage']); // Récupère et nettoie le stockage saisi
+    $carte_graphique = trim($_POST['carte_graphique']); // Récupère et nettoie la carte graphique saisie
+    $description = trim($_POST['description']); // Récupère et nettoie la description saisie
+    $disponible = isset($_POST['disponible']) ? 1 : 0; // Vérifie si la case disponible est cochée (1 si oui, 0 si non)
     
-    if (isset($_POST['id']) && !empty($_POST['id'])) {
-        // Modification
-        $stmt = $pdo->prepare("UPDATE ordinateurs SET nom = ?, prix = ?, processeur = ?, ram = ?, stockage = ?, carte_graphique = ?, description = ?, disponible = ? WHERE id = ?");
-        $stmt->execute([$nom, $prix, $processeur, $ram, $stockage, $carte_graphique, $description, $disponible, $_POST['id']]);
-    } else {
-        // Ajout
-        $stmt = $pdo->prepare("INSERT INTO ordinateurs (nom, prix, processeur, ram, stockage, carte_graphique, description, disponible) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$nom, $prix, $processeur, $ram, $stockage, $carte_graphique, $description, $disponible]);
+    if (isset($_POST['id']) && !empty($_POST['id'])) { // Vérifie si un ID est présent (modification)
+        // Modification - Commentaire indiquant qu'on modifie un ordinateur existant
+        $stmt = $pdo->prepare("UPDATE ordinateurs SET nom = ?, prix = ?, processeur = ?, ram = ?, stockage = ?, carte_graphique = ?, description = ?, disponible = ? WHERE id = ?"); // Prépare la requête de modification
+        $stmt->execute([$nom, $prix, $processeur, $ram, $stockage, $carte_graphique, $description, $disponible, $_POST['id']]); // Exécute la modification avec toutes les données
+    } else { // Sinon (ajout d'un nouvel ordinateur)
+        // Ajout - Commentaire indiquant qu'on ajoute un nouvel ordinateur
+        $stmt = $pdo->prepare("INSERT INTO ordinateurs (nom, prix, processeur, ram, stockage, carte_graphique, description, disponible) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); // Prépare la requête d'insertion
+        $stmt->execute([$nom, $prix, $processeur, $ram, $stockage, $carte_graphique, $description, $disponible]); // Exécute l'insertion avec toutes les données
     }
-    header('Location: ordinateurs.php');
-    exit;
+    header('Location: ordinateurs.php'); // Redirection vers la page de gestion
+    exit; // Arrêt de l'exécution du script
 }
 
-// Édition
-$editPC = null;
-if (isset($_GET['edit'])) {
-    $stmt = $pdo->prepare("SELECT * FROM ordinateurs WHERE id = ?");
-    $stmt->execute([$_GET['edit']]);
-    $editPC = $stmt->fetch();
+// Édition - Commentaire expliquant la récupération pour édition
+$editPC = null; // Initialise la variable d'ordinateur à éditer
+if (isset($_GET['edit'])) { // Vérifie si un ID d'ordinateur à éditer est passé en paramètre
+    $stmt = $pdo->prepare("SELECT * FROM ordinateurs WHERE id = ?"); // Prépare la requête de sélection
+    $stmt->execute([$_GET['edit']]); // Exécute la requête avec l'ID en paramètre
+    $editPC = $stmt->fetch(); // Récupère les données de l'ordinateur à éditer
 }
 
-// Liste
-$ordinateurs = $pdo->query("SELECT * FROM ordinateurs ORDER BY created_at DESC")->fetchAll();
+// Liste - Commentaire expliquant la récupération de tous les ordinateurs
+$ordinateurs = $pdo->query("SELECT * FROM ordinateurs ORDER BY created_at DESC")->fetchAll(); // Requête pour récupérer tous les ordinateurs triés par date de création décroissante
 ?>
 <?php include '../includes/header.php'; ?>
 

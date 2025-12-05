@@ -1,32 +1,32 @@
-<?php 
-require_once 'config/database.php';
-require_once 'includes/auth.php';
-include 'includes/header.php';
-?>
+<?php // Ouverture du tag PHP
+require_once 'config/database.php'; // Inclusion du fichier de configuration de la base de données
+require_once 'includes/auth.php'; // Inclusion du fichier d'authentification
+include 'includes/header.php'; // Inclusion de l'en-tête de la page
+?> <!-- Fermeture du tag PHP -->
 
-<section class="hero">
-    <h1>Bienvenue chez TechSolutions</h1>
-    <p>Votre partenaire pour des solutions technologiques innovantes</p>
-    <a href="api/login.php" class="service-link">Se connecter</a>
-</section>
+<section class="hero"> <!-- Section héro avec classe CSS -->
+    <h1>Bienvenue chez TechSolutions</h1> <!-- Titre principal de la page -->
+    <p>Votre partenaire pour des solutions technologiques innovantes</p> <!-- Sous-titre descriptif -->
+    <a href="api/login.php" class="service-link">Se connecter</a> <!-- Lien vers la page de connexion -->
+</section> <!-- Fin de la section héro -->
 
-<section class="services">
-    <h2>Nos Services</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Applications Mobiles</h3>
-            <p>Applications iOS et Android sur mesure pour vos besoins</p>
-        </div>
-        <div class="service-card">
-            <h3>Consulting IT</h3>
-            <p>Conseils stratégiques pour votre transformation digitale</p>
-        </div>
-        <div class="service-card">
-            <h3>Support Technique</h3>
-            <p>Assistance et maintenance de vos systèmes informatiques</p>
-        </div>
-    </div>
-</section>
+<section class="services"> <!-- Section des services -->
+    <h2>Nos Services</h2> <!-- Titre de la section services -->
+    <div class="service-grid"> <!-- Conteneur en grille pour les services -->
+        <div class="service-card"> <!-- Carte de service 1 -->
+            <h3>Applications Mobiles</h3> <!-- Titre du service -->
+            <p>Applications iOS et Android sur mesure pour vos besoins</p> <!-- Description du service -->
+        </div> <!-- Fin de la carte service 1 -->
+        <div class="service-card"> <!-- Carte de service 2 -->
+            <h3>Consulting IT</h3> <!-- Titre du service -->
+            <p>Conseils stratégiques pour votre transformation digitale</p> <!-- Description du service -->
+        </div> <!-- Fin de la carte service 2 -->
+        <div class="service-card"> <!-- Carte de service 3 -->
+            <h3>Support Technique</h3> <!-- Titre du service -->
+            <p>Assistance et maintenance de vos systèmes informatiques</p> <!-- Description du service -->
+        </div> <!-- Fin de la carte service 3 -->
+    </div> <!-- Fin du conteneur grille -->
+</section> <!-- Fin de la section services -->
 
 <section class="about">
     <h2>À Propos de TechSolutions</h2>

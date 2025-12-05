@@ -1,312 +1,312 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { /* Sélecteur universel pour tous les éléments */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements intérieurs par défaut */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur totale */
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+body { /* Style du corps de la page */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Définit la police de caractères */
+    line-height: 1.6; /* Espacement entre les lignes de texte */
+    color: #333; /* Couleur du texte (gris foncé) */
 }
 
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 0;
+header { /* Style de l'en-tête de la page */
+    background: #2c3e50; /* Couleur de fond bleu foncé */
+    color: white; /* Couleur du texte blanc */
+    padding: 1rem 0; /* Espacement vertical de 1rem */
 }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+nav { /* Style de la barre de navigation */
+    max-width: 1200px; /* Largeur maximale de 1200px */
+    margin: 0 auto; /* Centrage horizontal automatique */
+    display: flex; /* Affichage en flexbox */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Alignement vertical centré */
+    padding: 0 2rem; /* Espacement horizontal de 2rem */
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.logo { /* Style du logo */
+    font-size: 1.5rem; /* Taille de police de 1.5rem */
+    font-weight: bold; /* Texte en gras */
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Alignement vertical centré */
+    gap: 0.5rem; /* Espacement entre les éléments de 0.5rem */
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
+.logo-img { /* Style de l'image du logo */
+    height: 40px; /* Hauteur fixe de 40px */
+    width: auto; /* Largeur automatique pour garder les proportions */
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+nav ul { /* Style de la liste de navigation */
+    display: flex; /* Affichage en flexbox pour alignement horizontal */
+    list-style: none; /* Supprime les puces de liste */
+    gap: 2rem; /* Espacement de 2rem entre les éléments */
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
+nav a { /* Style des liens de navigation */
+    color: white; /* Couleur du texte blanc */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    transition: color 0.3s; /* Animation de changement de couleur en 0.3s */
 }
 
-nav a:hover {
-    color: #3498db;
+nav a:hover { /* Style des liens au survol */
+    color: #3498db; /* Change la couleur en bleu au survol */
 }
 
-main {
-    min-height: calc(100vh - 200px);
+main { /* Style du contenu principal */
+    min-height: calc(100vh - 200px); /* Hauteur minimale calculée (hauteur écran - 200px) */
 }
 
-section {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+section { /* Style des sections de contenu */
+    max-width: 1200px; /* Largeur maximale de 1200px */
+    margin: 2rem auto; /* Marge verticale de 2rem et centrage horizontal */
+    padding: 0 2rem; /* Espacement horizontal de 2rem */
 }
 
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #5574ff 0%, #1607e6 100%);
-    color: white;
+.hero { /* Style de la section héro */
+    text-align: center; /* Centrage du texte */
+    padding: 4rem 2rem; /* Espacement interne de 4rem vertical et 2rem horizontal */
+    background: linear-gradient(135deg, #5574ff 0%, #1607e6 100%); /* Dégradé bleu diagonal */
+    color: white; /* Couleur du texte blanc */
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.hero h1 { /* Style du titre principal de la section héro */
+    font-size: 2.5rem; /* Taille de police de 2.5rem */
+    margin-bottom: 1rem; /* Marge inférieure de 1rem */
 }
 
-.service-grid, .articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.service-grid, .articles-grid { /* Style des grilles de services et articles */
+    display: grid; /* Affichage en grille CSS */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes adaptatives avec minimum 250px */
+    gap: 2rem; /* Espacement de 2rem entre les éléments de grille */
+    margin-top: 2rem; /* Marge supérieure de 2rem */
 }
 
-.service-card, .article-card {
-    padding: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s;
+.service-card, .article-card { /* Style des cartes de service et d'article */
+    padding: 2rem; /* Espacement interne de 2rem */
+    border: 1px solid #ddd; /* Bordure grise de 1px */
+    border-radius: 8px; /* Coins arrondis de 8px */
+    transition: transform 0.3s; /* Animation de transformation en 0.3s */
 }
 
-.service-card:hover, .article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.service-card:hover, .article-card:hover { /* Style des cartes au survol */
+    transform: translateY(-5px); /* Déplacement vers le haut de 5px */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ombre portée */
 }
 
-.service-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s;
+.service-link { /* Style des liens de service */
+    display: inline-block; /* Affichage en bloc inline */
+    margin-top: 1rem; /* Marge supérieure de 1rem */
+    padding: 0.5rem 1rem; /* Espacement interne vertical 0.5rem, horizontal 1rem */
+    background: #3498db; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte blanc */
+    text-decoration: none; /* Supprime le soulignement */
+    border-radius: 4px; /* Coins arrondis de 4px */
+    transition: background 0.3s; /* Animation de changement de fond en 0.3s */
 }
 
-.service-link:hover {
-    background: #2980b9;
+.service-link:hover { /* Style des liens de service au survol */
+    background: #2980b9; /* Couleur de fond bleu plus foncé */
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.form-group { /* Style des groupes de champs de formulaire */
+    margin-bottom: 1.5rem; /* Marge inférieure de 1.5rem entre les champs */
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+label { /* Style des étiquettes de formulaire */
+    display: block; /* Affichage en bloc pour occuper toute la largeur */
+    margin-bottom: 0.5rem; /* Marge inférieure de 0.5rem */
+    font-weight: 500; /* Poids de police semi-gras */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+input[type="text"], /* Style des champs de saisie texte */
+input[type="email"], /* Style des champs de saisie email */
+input[type="password"], /* Style des champs de saisie mot de passe */
+input[type="tel"], /* Style des champs de saisie téléphone */
+textarea { /* Style des zones de texte */
+    width: 100%; /* Largeur de 100% du conteneur */
+    padding: 0.75rem; /* Espacement interne de 0.75rem */
+    border: 1px solid #ddd; /* Bordure grise de 1px */
+    border-radius: 4px; /* Coins arrondis de 4px */
+    font-size: 1rem; /* Taille de police de 1rem */
 }
 
-.checkbox {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
+.checkbox { /* Style des conteneurs de cases à cocher */
+    display: flex; /* Affichage en flexbox */
+    align-items: flex-start; /* Alignement en haut */
+    gap: 0.5rem; /* Espacement de 0.5rem entre les éléments */
 }
 
-.checkbox input {
-    width: auto;
-    margin-top: 0.25rem;
+.checkbox input { /* Style des cases à cocher */
+    width: auto; /* Largeur automatique */
+    margin-top: 0.25rem; /* Marge supérieure de 0.25rem pour alignement */
 }
 
-button, .btn-export, .btn-delete {
-    padding: 0.75rem 2rem;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s;
+button, .btn-export, .btn-delete { /* Style des boutons principaux */
+    padding: 0.75rem 2rem; /* Espacement interne vertical 0.75rem, horizontal 2rem */
+    background: #3498db; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte blanc */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 4px; /* Coins arrondis de 4px */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    font-size: 1rem; /* Taille de police de 1rem */
+    text-decoration: none; /* Supprime le soulignement pour les liens */
+    display: inline-block; /* Affichage en bloc inline */
+    transition: background 0.3s; /* Animation de changement de fond en 0.3s */
 }
 
-button:hover, .btn-export:hover {
-    background: #2980b9;
+button:hover, .btn-export:hover { /* Style des boutons au survol */
+    background: #2980b9; /* Couleur de fond bleu plus foncé */
 }
 
-.btn-delete {
-    background: #e74c3c;
-    margin-top: 1rem;
+.btn-delete { /* Style spécifique du bouton de suppression */
+    background: #e74c3c; /* Couleur de fond rouge */
+    margin-top: 1rem; /* Marge supérieure de 1rem */
 }
 
-.btn-delete:hover {
-    background: #c0392b;
+.btn-delete:hover { /* Style du bouton de suppression au survol */
+    background: #c0392b; /* Couleur de fond rouge plus foncé */
 }
 
-.btn-cancel {
-    padding: 0.75rem 2rem;
-    background: #95a5a6;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-left: 1rem;
+.btn-cancel { /* Style du bouton d'annulation */
+    padding: 0.75rem 2rem; /* Espacement interne vertical 0.75rem, horizontal 2rem */
+    background: #95a5a6; /* Couleur de fond grise */
+    color: white; /* Couleur du texte blanc */
+    text-decoration: none; /* Supprime le soulignement */
+    border-radius: 4px; /* Coins arrondis de 4px */
+    margin-left: 1rem; /* Marge gauche de 1rem */
 }
 
-.alert {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
+.alert { /* Style de base des messages d'alerte */
+    padding: 1rem; /* Espacement interne de 1rem */
+    margin-bottom: 1rem; /* Marge inférieure de 1rem */
+    border-radius: 4px; /* Coins arrondis de 4px */
 }
 
-.alert.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+.alert.success { /* Style des messages de succès */
+    background: #d4edda; /* Couleur de fond vert clair */
+    color: #155724; /* Couleur du texte vert foncé */
+    border: 1px solid #c3e6cb; /* Bordure verte */
 }
 
-.alert.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+.alert.error { /* Style des messages d'erreur */
+    background: #f8d7da; /* Couleur de fond rouge clair */
+    color: #721c24; /* Couleur du texte rouge foncé */
+    border: 1px solid #f5c6cb; /* Bordure rouge */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
+table { /* Style des tableaux */
+    width: 100%; /* Largeur de 100% du conteneur */
+    border-collapse: collapse; /* Fusion des bordures adjacentes */
+    margin-top: 2rem; /* Marge supérieure de 2rem */
 }
 
-th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+th, td { /* Style des cellules d'en-tête et de données */
+    padding: 1rem; /* Espacement interne de 1rem */
+    text-align: left; /* Alignement du texte à gauche */
+    border-bottom: 1px solid #ddd; /* Bordure inférieure grise */
 }
 
-th {
-    background: #f8f9fa;
-    font-weight: 600;
+th { /* Style spécifique des cellules d'en-tête */
+    background: #f8f9fa; /* Couleur de fond gris clair */
+    font-weight: 600; /* Poids de police semi-gras */
 }
 
-.admin-menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.admin-menu { /* Style du menu d'administration */
+    display: grid; /* Affichage en grille CSS */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives avec minimum 300px */
+    gap: 2rem; /* Espacement de 2rem entre les éléments */
+    margin-top: 2rem; /* Marge supérieure de 2rem */
 }
 
-.admin-card {
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    transition: all 0.3s;
+.admin-card { /* Style des cartes d'administration */
+    padding: 2rem; /* Espacement interne de 2rem */
+    background: #f8f9fa; /* Couleur de fond gris clair */
+    border-radius: 8px; /* Coins arrondis de 8px */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #333; /* Couleur du texte gris foncé */
+    transition: all 0.3s; /* Animation de toutes les propriétés en 0.3s */
 }
 
-.admin-card:hover {
-    background: #e9ecef;
-    transform: translateY(-3px);
+.admin-card:hover { /* Style des cartes d'administration au survol */
+    background: #e9ecef; /* Couleur de fond gris plus foncé */
+    transform: translateY(-3px); /* Déplacement vers le haut de 3px */
 }
 
-.service-card.admin-only {
-    border: 2px solid #e74c3c;
-    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+.service-card.admin-only { /* Style des cartes réservées aux administrateurs */
+    border: 2px solid #e74c3c; /* Bordure rouge de 2px */
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%); /* Dégradé rouge clair */
 }
 
-.service-card.admin-only h3 {
-    color: #c0392b;
+.service-card.admin-only h3 { /* Style des titres des cartes admin */
+    color: #c0392b; /* Couleur du texte rouge foncé */
 }
 
-.service-card.admin-only .service-link {
-    background: #e74c3c;
+.service-card.admin-only .service-link { /* Style des liens dans les cartes admin */
+    background: #e74c3c; /* Couleur de fond rouge */
 }
 
-.service-card.admin-only .service-link:hover {
-    background: #c0392b;
+.service-card.admin-only .service-link:hover { /* Style des liens admin au survol */
+    background: #c0392b; /* Couleur de fond rouge plus foncé */
 }
 
-.gdpr-actions {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 8px;
+.gdpr-actions { /* Style de la section d'actions RGPD */
+    margin-top: 3rem; /* Marge supérieure de 3rem */
+    padding: 2rem; /* Espacement interne de 2rem */
+    background: #f8f9fa; /* Couleur de fond gris clair */
+    border-radius: 8px; /* Coins arrondis de 8px */
 }
 
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+footer { /* Style du pied de page */
+    background: #2c3e50; /* Couleur de fond bleu foncé */
+    color: white; /* Couleur du texte blanc */
+    text-align: center; /* Centrage du texte */
+    padding: 2rem; /* Espacement interne de 2rem */
+    margin-top: 4rem; /* Marge supérieure de 4rem */
 }
 
-footer a {
-    color: #3498db;
-    text-decoration: none;
+footer a { /* Style des liens dans le pied de page */
+    color: #3498db; /* Couleur du texte bleu */
+    text-decoration: none; /* Supprime le soulignement */
 }
 
-.admin-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+.admin-header { /* Style de l'en-tête d'administration */
+    display: flex; /* Affichage en flexbox */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Alignement vertical centré */
+    margin-bottom: 2rem; /* Marge inférieure de 2rem */
 }
 
-.btn-back {
-    padding: 0.5rem 1rem;
-    background: #95a5a6;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+.btn-back { /* Style du bouton de retour */
+    padding: 0.5rem 1rem; /* Espacement interne vertical 0.5rem, horizontal 1rem */
+    background: #95a5a6; /* Couleur de fond grise */
+    color: white; /* Couleur du texte blanc */
+    text-decoration: none; /* Supprime le soulignement */
+    border-radius: 4px; /* Coins arrondis de 4px */
+    font-size: 0.9rem; /* Taille de police de 0.9rem */
+    transition: background 0.3s; /* Animation de changement de fond en 0.3s */
 }
 
-.btn-back:hover {
-    background: #7f8c8d;
+.btn-back:hover { /* Style du bouton de retour au survol */
+    background: #7f8c8d; /* Couleur de fond gris plus foncé */
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 1rem;
+@media (max-width: 768px) { /* Styles pour écrans de 768px et moins (responsive) */
+    nav { /* Navigation en mode mobile */
+        flex-direction: column; /* Disposition verticale */
+        gap: 1rem; /* Espacement de 1rem entre les éléments */
     }
     
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+    nav ul { /* Liste de navigation en mode mobile */
+        flex-direction: column; /* Disposition verticale */
+        gap: 1rem; /* Espacement de 1rem entre les éléments */
+        text-align: center; /* Centrage du texte */
     }
     
-    .admin-header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+    .admin-header { /* En-tête admin en mode mobile */
+        flex-direction: column; /* Disposition verticale */
+        gap: 1rem; /* Espacement de 1rem entre les éléments */
+        text-align: center; /* Centrage du texte */
     }
 }

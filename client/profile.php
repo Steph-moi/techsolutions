@@ -1,55 +1,55 @@
-<?php
-require_once '../includes/auth.php';
-requireLogin();
+<?php // Ouverture du tag PHP
+require_once '../includes/auth.php'; // Inclusion du fichier d'authentification
+requireLogin(); // Vérification que l'utilisateur est connecté
 
-// Mise à jour profil
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    $nom = trim($_POST['nom']);
-    $prenom = trim($_POST['prenom']);
-    $telephone = trim($_POST['telephone']);
+// Mise à jour profil - Commentaire expliquant la mise à jour du profil utilisateur
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) { // Vérifie si le formulaire de mise à jour a été soumis
+    $nom = trim($_POST['nom']); // Récupère et nettoie le nom saisi
+    $prenom = trim($_POST['prenom']); // Récupère et nettoie le prénom saisi
+    $telephone = trim($_POST['telephone']); // Récupère et nettoie le téléphone saisi
     
-    $stmt = $pdo->prepare("UPDATE users SET nom = ?, prenom = ?, telephone = ? WHERE id = ?");
-    $stmt->execute([$nom, $prenom, $telephone, $_SESSION['user_id']]);
+    $stmt = $pdo->prepare("UPDATE users SET nom = ?, prenom = ?, telephone = ? WHERE id = ?"); // Prépare la requête de mise à jour du profil
+    $stmt->execute([$nom, $prenom, $telephone, $_SESSION['user_id']]); // Exécute la mise à jour avec les nouvelles données
     
-    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'update', 'Modification profil')");
-    $stmt->execute([$_SESSION['user_id']]);
+    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'update', 'Modification profil')"); // Prépare l'insertion d'un log RGPD pour traçabilité
+    $stmt->execute([$_SESSION['user_id']]); // Exécute l'insertion du log
     
-    $_SESSION['nom'] = $nom;
-    $_SESSION['prenom'] = $prenom;
-    $success = "Profil mis à jour avec succès";
+    $_SESSION['nom'] = $nom; // Met à jour le nom en session
+    $_SESSION['prenom'] = $prenom; // Met à jour le prénom en session
+    $success = "Profil mis à jour avec succès"; // Définit le message de succès
 }
 
-// Export données RGPD
-if (isset($_GET['export'])) {
-    $stmt = $pdo->prepare("SELECT email, nom, prenom, telephone, created_at FROM users WHERE id = ?");
-    $stmt->execute([$_SESSION['user_id']]);
-    $data = $stmt->fetch();
+// Export données RGPD - Commentaire expliquant l'export des données personnelles
+if (isset($_GET['export'])) { // Vérifie si l'export des données est demandé
+    $stmt = $pdo->prepare("SELECT email, nom, prenom, telephone, created_at FROM users WHERE id = ?"); // Prépare la requête pour récupérer les données utilisateur
+    $stmt->execute([$_SESSION['user_id']]); // Exécute la requête avec l'ID utilisateur
+    $data = $stmt->fetch(); // Récupère les données
     
-    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'export', 'Export données')");
-    $stmt->execute([$_SESSION['user_id']]);
+    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'export', 'Export données')"); // Prépare l'insertion d'un log RGPD pour l'export
+    $stmt->execute([$_SESSION['user_id']]); // Exécute l'insertion du log
     
-    header('Content-Type: application/json');
-    header('Content-Disposition: attachment; filename="mes_donnees.json"');
-    echo json_encode($data, JSON_PRETTY_PRINT);
-    exit;
+    header('Content-Type: application/json'); // Définit le type de contenu JSON
+    header('Content-Disposition: attachment; filename="mes_donnees.json"'); // Force le téléchargement du fichier
+    echo json_encode($data, JSON_PRETTY_PRINT); // Convertit et affiche les données en JSON formaté
+    exit; // Arrêt de l'exécution du script
 }
 
-// Suppression compte
-if (isset($_POST['delete_account'])) {
-    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'delete', 'Auto-suppression')");
-    $stmt->execute([$_SESSION['user_id']]);
+// Suppression compte - Commentaire expliquant la suppression du compte utilisateur
+if (isset($_POST['delete_account'])) { // Vérifie si la suppression du compte est demandée
+    $stmt = $pdo->prepare("INSERT INTO gdpr_logs (user_id, action, details) VALUES (?, 'delete', 'Auto-suppression')"); // Prépare l'insertion d'un log RGPD pour la suppression
+    $stmt->execute([$_SESSION['user_id']]); // Exécute l'insertion du log
     
-    $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->execute([$_SESSION['user_id']]);
+    $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?"); // Prépare la requête de suppression du compte
+    $stmt->execute([$_SESSION['user_id']]); // Exécute la suppression
     
-    session_destroy();
-    header('Location: /techsolutions/index.php');
-    exit;
+    session_destroy(); // Détruit la session utilisateur
+    header('Location: /techsolutions/index.php'); // Redirection vers la page d'accueil
+    exit; // Arrêt de l'exécution du script
 }
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
-$stmt->execute([$_SESSION['user_id']]);
-$user = $stmt->fetch();
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?"); // Prépare la requête pour récupérer les infos utilisateur
+$stmt->execute([$_SESSION['user_id']]); // Exécute la requête avec l'ID utilisateur
+$user = $stmt->fetch(); // Récupère les données de l'utilisateur connecté
 ?>
 <?php include '../includes/header.php'; ?>
 
