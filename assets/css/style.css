@@ -217,7 +217,77 @@ th { /* Style spécifique des cellules d'en-tête */
     display: grid; /* Affichage en grille */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes adaptatives */
     gap: 2rem; /* Espacement entre les éléments */
-    margin-bottom: 3rem; /* Marge inférieure */
+    margin-bottom: 3rem; /* Marge inférieure de 3rem */
+}
+
+.pc-config { /* Style des cartes de configuration PC */
+    position: relative; /* Position relative pour les éléments enfants */
+    overflow: hidden; /* Cache le débordement */
+}
+
+.pc-image { /* Style des images de PC */
+    width: 100%; /* Largeur de 100% */
+    height: 200px; /* Hauteur fixe de 200px */
+    object-fit: cover; /* Ajustement de l'image */
+    border-radius: 8px 8px 0 0; /* Coins arrondis en haut */
+    margin-bottom: 1rem; /* Marge inférieure de 1rem */
+}
+
+.pc-placeholder { /* Style du placeholder pour les PC sans image */
+    width: 100%; /* Largeur de 100% */
+    height: 200px; /* Hauteur fixe de 200px */
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Alignement vertical centré */
+    justify-content: center; /* Alignement horizontal centré */
+    background: #f8f9fa; /* Couleur de fond gris clair */
+    font-size: 4rem; /* Taille de police de 4rem */
+    color: #6c757d; /* Couleur grise */
+    border-radius: 8px 8px 0 0; /* Coins arrondis en haut */
+    margin-bottom: 1rem; /* Marge inférieure de 1rem */
+}
+
+.pc-price { /* Style du prix des PC */
+    font-size: 1.5rem; /* Taille de police de 1.5rem */
+    font-weight: bold; /* Texte en gras */
+    color: #2c3e50; /* Couleur bleu foncé */
+    margin: 0.5rem 0; /* Marge verticale de 0.5rem */
+}
+
+.pc-specs { /* Style des spécifications PC */
+    margin: 1rem 0; /* Marge verticale de 1rem */
+    font-size: 0.9rem; /* Taille de police de 0.9rem */
+    line-height: 1.4; /* Espacement entre les lignes */
+}
+
+.pc-specs p { /* Style des paragraphes de spécifications */
+    margin: 0.25rem 0; /* Marge verticale de 0.25rem */
+    color: #555; /* Couleur gris moyen */
+}
+
+.pc-specs strong { /* Style du texte en gras dans les spécifications */
+    color: #2c3e50; /* Couleur bleu foncé */
+}
+
+.configurations h2 { /* Style du titre des configurations */
+    text-align: center; /* Centrage du texte */
+    margin-bottom: 2rem; /* Marge inférieure de 2rem */
+    color: #2c3e50; /* Couleur bleu foncé */
+}
+
+@media (max-width: 768px) { /* Styles pour écrans mobiles */
+    .service-grid { /* Grille de services sur mobile */
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 1rem; /* Espacement réduit */
+    }
+    
+    .pc-image, .pc-placeholder { /* Images et placeholders sur mobile */
+        height: 150px; /* Hauteur réduite */
+    }
+    
+    .pc-price { /* Prix sur mobile */
+        font-size: 1.25rem; /* Taille de police réduite */
+    }
+}ge inférieure */
 }
 
 .contact-item { /* Style des éléments de contact */
