@@ -32,4 +32,4 @@ try { // Début du bloc try pour gérer les erreurs de base de données
 } catch(PDOException $e) { // Capture des exceptions PDO en cas d'erreur
     echo "Erreur : " . $e->getMessage(); // Affichage du message d'erreur
 }
-?> <!-- Fermeture du tag PHP -->
+?>

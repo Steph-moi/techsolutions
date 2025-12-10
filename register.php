@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Vérifie si le formulaire a ét�
         }
     }
 }
-?> <!-- Fermeture du tag PHP -->
+?>
 <?php include 'includes/header.php'; ?> <!-- Inclusion de l'en-tête de la page -->
 
 <section class="register"> <!-- Section d'inscription avec classe CSS -->

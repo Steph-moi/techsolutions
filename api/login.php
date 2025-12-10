@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Vérifie si le formulaire a ét�
         $error = "Email ou mot de passe incorrect"; // Définit le message d'erreur
     }
 }
-?> <!-- Fermeture du tag PHP -->
+?>
 <?php include '../includes/header.php'; ?> <!-- Inclusion de l'en-tête de la page -->
 
 <section class="login"> <!-- Section de connexion avec classe CSS -->

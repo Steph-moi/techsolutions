@@ -14,7 +14,7 @@ if (isset($_GET['delete'])) { // Vérifie si un ID d'utilisateur à supprimer es
 }
 
 $users = $pdo->query("SELECT * FROM users ORDER BY created_at DESC")->fetchAll(); // Récupération de tous les utilisateurs triés par date d'inscription décroissante
-?> <!-- Fermeture du tag PHP -->
+?>
 <?php include '../includes/header.php'; ?> <!-- Inclusion de l'en-tête de la page -->
 
 <section class="admin-users"> <!-- Section de gestion des utilisateurs avec classe CSS -->

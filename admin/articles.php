@@ -38,7 +38,7 @@ if (isset($_GET['edit'])) { // Vérifie si un ID d'article à éditer est passé
 $articles = $pdo->query("SELECT a.*, u.prenom, u.nom FROM articles a 
                          LEFT JOIN users u ON a.auteur_id = u.id 
                          ORDER BY a.created_at DESC")->fetchAll(); // Requête pour récupérer tous les articles avec infos auteur, triés par date
-?> <!-- Fermeture du tag PHP -->
+?>
 <?php include '../includes/header.php'; ?> <!-- Inclusion de l'en-tête de la page -->
 
 <section class="admin-articles"> <!-- Section de gestion des articles avec classe CSS -->

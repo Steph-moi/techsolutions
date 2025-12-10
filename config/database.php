@@ -14,4 +14,4 @@ try { // Début du bloc try pour gérer les erreurs de connexion
 }
 
 session_start(); // Démarre ou reprend une session PHP pour gérer les données utilisateur
-?> // Fermeture du tag PHP
+?>

@@ -22,4 +22,4 @@ function requireAdmin() { // Fonction pour forcer les droits administrateur
         die('Accès refusé'); // Arrête le script avec un message d'erreur
     }
 }
-?> // Fermeture du tag PHP
+?>

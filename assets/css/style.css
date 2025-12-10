@@ -213,11 +213,77 @@ th { /* Style spécifique des cellules d'en-tête */
     font-weight: 600; /* Poids de police semi-gras */
 }
 
+.contact-info { /* Style des informations de contact */
+    display: grid; /* Affichage en grille */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes adaptatives */
+    gap: 2rem; /* Espacement entre les éléments */
+    margin-bottom: 3rem; /* Marge inférieure */
+}
+
+.contact-item { /* Style des éléments de contact */
+    text-align: center; /* Centrage du texte */
+    padding: 1.5rem; /* Espacement interne */
+    background: #f8f9fa; /* Couleur de fond gris clair */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+.pc-config { /* Style des cartes de configuration PC */
+    position: relative; /* Position relative pour les éléments absolus */
+}
+
+.pc-image { /* Style des images de PC */
+    width: 100%; /* Largeur de 100% */
+    height: 200px; /* Hauteur fixe */
+    object-fit: cover; /* Ajustement de l'image */
+    border-radius: 8px; /* Coins arrondis */
+    margin-bottom: 1rem; /* Marge inférieure */
+}
+
+.pc-placeholder { /* Style du placeholder pour les images manquantes */
+    width: 100%; /* Largeur de 100% */
+    height: 200px; /* Hauteur fixe */
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Alignement vertical centré */
+    justify-content: center; /* Alignement horizontal centré */
+    background: #e9ecef; /* Couleur de fond grise */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 3rem; /* Taille de police grande */
+    margin-bottom: 1rem; /* Marge inférieure */
+}
+
+.pc-price { /* Style du prix des PC */
+    font-size: 1.5rem; /* Taille de police grande */
+    font-weight: bold; /* Texte en gras */
+    color: #e74c3c; /* Couleur rouge */
+    margin: 1rem 0; /* Marges verticales */
+}
+
+.pc-specs { /* Style des spécifications PC */
+    text-align: left; /* Alignement à gauche */
+    margin: 1rem 0; /* Marges verticales */
+}
+
+.pc-specs p { /* Style des paragraphes de spécifications */
+    margin: 0.5rem 0; /* Marges verticales réduites */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+.admin-btn { /* Style du bouton admin dans la navigation */
+    background: #e74c3c !important; /* Couleur de fond rouge pour se démarquer */
+    padding: 0.5rem 1rem !important; /* Espacement interne */
+    border-radius: 4px !important; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */: bold; /* Texte en gras */
+}
+
+.admin-btn:hover { /* Style du bouton admin au survol */
+    background: #c0392b !important; /* Couleur plus foncée au survol */
+}
+
 .admin-menu { /* Style du menu d'administration */
     display: grid; /* Affichage en grille CSS */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives avec minimum 300px */
     gap: 2rem; /* Espacement de 2rem entre les éléments */
-    margin-top: 2rem; /* Marge supérieure de 2rem */
+    margin-top: 2rem; /* Marge supérieure de 2rem */argin-top: 2rem; /* Marge supérieure de 2rem */
 }
 
 .admin-card { /* Style des cartes d'administration */

@@ -49,7 +49,7 @@ $ordinateurs = $pdo->query("SELECT * FROM ordinateurs ORDER BY created_at DESC")
 
 <section class="admin-ordinateurs">
     <div class="admin-header">
-        <h1>Gestion des Ordinateurs</h1>
+        <h1>Parc Informatique</h1>
         <a href="index.php" class="btn-back">← Retour au tableau de bord</a>
     </div>
     
@@ -105,6 +105,14 @@ $ordinateurs = $pdo->query("SELECT * FROM ordinateurs ORDER BY created_at DESC")
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea id="description" name="description" rows="3"><?= $editPC ? htmlspecialchars($editPC['description']) : '' ?></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+                <?php if($editPC && $editPC['photo']): ?>
+                    <p>Photo actuelle: <?= htmlspecialchars($editPC['photo']) ?></p>
+                <?php endif; ?>
             </div>
             
             <div class="form-group checkbox">

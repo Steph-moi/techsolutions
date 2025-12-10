@@ -6,7 +6,7 @@ $stmt = $pdo->query("SELECT a.*, u.prenom, u.nom FROM articles a
                      LEFT JOIN users u ON a.auteur_id = u.id 
                      ORDER BY a.created_at DESC"); // Requête SQL pour récupérer tous les articles avec les infos auteur, triés par date décroissante
 $articles = $stmt->fetchAll(); // Récupération de tous les résultats dans un tableau
-?> <!-- Fermeture du tag PHP -->
+?>
 <?php include 'includes/header.php'; ?> <!-- Inclusion de l'en-tête de la page -->
 
 <section class="actualites"> <!-- Section des actualités avec classe CSS -->

@@ -20,4 +20,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Vérifie si le formulaire a ét�
     header('Location: /techsolutions/contact.php'); // Redirection vers la page de contact
     exit; // Arrêt de l'exécution du script
 }
-?> <!-- Fermeture du tag PHP -->
+?>

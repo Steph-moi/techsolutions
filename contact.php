@@ -4,6 +4,25 @@
 <section class="contact"> <!-- Section de contact avec classe CSS -->
     <h1>Contactez-nous</h1> <!-- Titre principal de la page de contact -->
     
+    <div class="contact-info">
+        <div class="contact-item">
+            <h3>📍 Adresse</h3>
+            <p>123 Avenue de l'Innovation<br>
+            75001 Paris, France</p>
+        </div>
+        
+        <div class="contact-item">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:contact@techsolutions.fr">contact@techsolutions.fr</a></p>
+        </div>
+        
+        
+        <div class="contact-item">
+            <h3>📞 Téléphone</h3>
+            <p>+33 1 23 45 67 89</p>
+        </div>
+    </div>
+    
     <?php if(isset($_SESSION['contact_success'])): ?> <!-- Vérifie si un message de succès existe en session -->
         <div class="alert success">Votre message a été envoyé avec succès !</div> <!-- Affiche le message de succès -->
         <?php unset($_SESSION['contact_success']); ?> <!-- Supprime le message de la session -->

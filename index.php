@@ -10,21 +10,40 @@ include 'includes/header.php';
     <a href="api/login.php" class="service-link">Se connecter</a>
 </section>
 
-<section class="services">
-    <h2>Nos Services</h2>
+<section class="configurations">
+    <h2>Nos Configurations PC</h2>
     <div class="service-grid">
-        <div class="service-card">
-            <h3>Applications Mobiles</h3>
-            <p>Applications iOS et Android sur mesure pour vos besoins</p>
-        </div>
-        <div class="service-card">
-            <h3>Consulting IT</h3>
-            <p>Conseils stratégiques pour votre transformation digitale</p>
-        </div>
-        <div class="service-card">
-            <h3>Support Technique</h3>
-            <p>Assistance et maintenance de vos systèmes informatiques</p>
-        </div>
+        <?php
+        try {
+            $stmt = $pdo->query("SELECT * FROM ordinateurs WHERE disponible = 1 ORDER BY prix ASC LIMIT 6");
+            $ordinateurs = $stmt->fetchAll();
+            
+            if ($ordinateurs): 
+                foreach ($ordinateurs as $pc): ?>
+                    <div class="service-card pc-config">
+                        <?php if(isset($pc['photo']) && $pc['photo']): ?>
+                            <img src="/techsolutions/uploads/<?= htmlspecialchars($pc['photo']) ?>" alt="<?= htmlspecialchars($pc['nom']) ?>" class="pc-image">
+                        <?php else: ?>
+                            <div class="pc-placeholder">💻</div>
+                        <?php endif; ?>
+                        <h3><?= htmlspecialchars($pc['nom']) ?></h3>
+                        <div class="pc-price"><?= number_format($pc['prix'], 2) ?> €</div>
+                        <div class="pc-specs">
+                            <p><strong>Processeur:</strong> <?= htmlspecialchars($pc['processeur']) ?></p>
+                            <p><strong>RAM:</strong> <?= htmlspecialchars($pc['ram']) ?></p>
+                            <p><strong>Stockage:</strong> <?= htmlspecialchars($pc['stockage']) ?></p>
+                            <p><strong>GPU:</strong> <?= htmlspecialchars($pc['carte_graphique']) ?></p>
+                        </div>
+                        <a href="contact.php?produit=<?= urlencode($pc['nom']) ?>" class="service-link">Demander un devis</a>
+                    </div>
+                <?php endforeach;
+            else: ?>
+                <p>Aucune configuration disponible pour le moment.</p>
+            <?php endif;
+        } catch(PDOException $e) {
+            echo '<p>Configurations temporairement indisponibles.</p>';
+        }
+        ?>
     </div>
 </section>
 
