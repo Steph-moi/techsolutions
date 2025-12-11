@@ -53,11 +53,13 @@ DROP TABLE IF EXISTS `components`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `components` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `prix` decimal(10,2) DEFAULT 0.00,
   `description` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +68,7 @@ CREATE TABLE `components` (
 
 LOCK TABLES `components` WRITE;
 /*!40000 ALTER TABLE `components` DISABLE KEYS */;
-INSERT INTO `components` VALUES (1,'Processeur i5','CPU 6 cœurs polyvalent'),(2,'RAM 16 Go','DDR4 2×8 Go'),(3,'SSD 500 Go','NVMe rapide'),(4,'Carte graphique GTX 1660','Jeux Full HD'),(5,'Boîtier + Alim 500W','Tour + alimentation'),(6,'Textorm TB1','B0001'),(7,'Fox spirit AG1 (Noir)','B0002'),(8,'Textorm TB10','B0003'),(9,'be quiet! Pure base 600 (Noir)','B0004'),(10,'ANTEC VSK-4000B-U3/U2','B0005'),(11,'CORSAIR 3000D Airflow (Noir)','B0006'),(12,'Fractal Design Pop Silent solid (noir)','B0007'),(13,'be quiet! Dark Rock 5 ','VE01'),(14,'be quiet! Pure Wings 3 140mm PWM high-speed','VB01'),(15,'Intel Core i7-12700KF (3.6 GHz / 5.0 GHz)','PR01'),(16,'Gigabyte B760M DS3H DDR4','CM01'),(17,'MSI PRO H610M-E DDR4','CM02'),(18,'ASUS PRIME Z790-P','CM03'),(19,'ASRock B450M Pro4 R2.0','CM04'),(20,'ASUS PRIME B760-PLUS D4','CM05'),(21,'MSI PRO B760M-P DDR4','CM06'),(22,'MSI PRO B650-S WIFI','CM07'),(23,'ASRock A520M-HVS','CM08'),(24,'Gigabyte GeForce RTX 3060 WINDFORCE OC 12G (LHR)','CG01'),(25,'Corsair RM850e','A01'),(26,'G.Skill Aegis 32 Go (2 x 16 Go) DDR4 3200 MHz CL16 ','R01'),(27,'Samsung SSD 990 PRO M.2 PCIe NVMe 1 To ','SS01'),(28,'iiyama 27\" LED - G-Master GB2745HSU-B2 Black Hawk ','MO01'),(29,'INOVU LK120 (AZERTY, Fran?ais)','C01'),(30,'Speedlink Piavo','S01');
+INSERT INTO `components` VALUES (1,'AMD Ryzen 7 7700X','Processeur',399.95,'8 cœurs/16 threads, 4.5-5.4 GHz, Socket AM5'),(2,'AMD Ryzen 5 7600','Processeur',229.95,'6 cœurs/12 threads, 3.8-5.1 GHz, Socket AM5'),(3,'Intel Core i7-1360P','Processeur',449.95,'12 cœurs (4P+8E), jusqu\'à 5.0 GHz, mobile'),(4,'ASUS TUF B650-PLUS WIFI','Carte mère',199.95,'Chipset B650, ATX, Socket AM5, WiFi 6E'),(5,'MSI B650M GAMING PLUS','Carte mère',149.95,'Chipset B650, Micro-ATX, Socket AM5'),(6,'Corsair Vengeance DDR5 32Go','RAM',189.95,'DDR5-5600, 2x16 Go, profil EXPO'),(7,'Kingston FURY DDR5 16Go','RAM',89.95,'DDR5-5600, 2x8 Go, profil EXPO'),(8,'Samsung 990 Pro 1To','Stockage',149.95,'NVMe PCIe 4.0, 7000/5000 Mo/s'),(9,'Kingston SSD NV3 500Go','Stockage',39.95,'NVMe PCIe 4.0, 3500/2100 Mo/s'),(10,'Samsung T7 1To USB-C','Stockage',129.95,'SSD externe chiffré AES-256'),(11,'RTX 5060 OC 8GB','Carte graphique',329.95,'Ray Tracing, DLSS 3, NVENC'),(12,'RX 6400 Challenger ITX','Carte graphique',159.95,'4 Go GDDR6, 75W TDP, multi-écrans'),(13,'Corsair RM750e 750W','Alimentation',119.95,'80+ Gold modulaire, garantie 10 ans'),(14,'Corsair RM650e 650W','Alimentation',99.95,'80+ Gold modulaire'),(15,'be quiet! Dark Rock 5','Ventirad',79.95,'TDP 200W, Silent Wings 135mm PWM'),(16,'Arctic P12 PWM 120mm','Ventilateur',7.95,'56.3 CFM, 0.3 Sone, PWM'),(17,'Fractal Design North','Boîtier',149.95,'ATX, façade mesh, verre trempé'),(18,'Cooler Master Q300L','Boîtier',49.95,'Micro-ATX compact, design sobre'),(19,'ASUS 27\" QHD XG27ACMG','Écran',299.95,'2560x1440, IPS, USB-C PD 65W'),(20,'BenQ 27\" PD2705Q','Écran',449.95,'2560x1440, 99% Adobe RGB, calibré'),(21,'Acer 24\" VG240YM3','Écran',149.95,'1920x1080 Full HD, IPS, hub USB'),(22,'Logitech MX Keys S','Clavier',99.95,'Filaire USB, rétroéclairage LED'),(23,'Logitech K280e','Clavier',29.95,'Résistant éclaboussures, silencieux'),(24,'Logitech MX Master 3S','Souris',89.95,'8000 DPI, 7 boutons programmables'),(25,'Logitech B100 Optical','Souris',14.95,'800 DPI, USB filaire, ambidextre'),(26,'Logitech H390 USB','Casque',44.95,'USB, microphone antibruit, Teams'),(27,'Wacom Intuos Pro Medium','Tablette graphique',249.95,'8192 niveaux pression, Bluetooth'),(28,'Kensington VeriMark','Sécurité',49.95,'Lecteur empreintes, Windows Hello');
 /*!40000 ALTER TABLE `components` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,33 +164,6 @@ INSERT INTO `ordinateurs` VALUES (11,'Configuration Type A - DÉVELOPPEMENT',289
 UNLOCK TABLES;
 
 --
--- Table structure for table `pc_components`
---
-
-DROP TABLE IF EXISTS `pc_components`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pc_components` (
-  `pc_id` int(10) unsigned NOT NULL,
-  `component_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`pc_id`,`component_id`),
-  KEY `component_id` (`component_id`),
-  CONSTRAINT `pc_components_ibfk_1` FOREIGN KEY (`pc_id`) REFERENCES `pcs` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `pc_components_ibfk_2` FOREIGN KEY (`component_id`) REFERENCES `components` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pc_components`
---
-
-LOCK TABLES `pc_components` WRITE;
-/*!40000 ALTER TABLE `pc_components` DISABLE KEYS */;
-INSERT INTO `pc_components` VALUES (1,1),(1,2),(1,3),(1,5),(2,1),(2,2),(2,3),(2,4),(2,5),(3,1),(3,2),(3,3),(3,4),(3,5);
-/*!40000 ALTER TABLE `pc_components` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `pcs`
 --
 
@@ -256,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-10 23:32:37
+-- Dump completed on 2025-12-11 20:21:21
